@@ -17,8 +17,6 @@ import { ExecutionResult } from 'graphql';
 
 import gql from 'graphql-tag';
 
-import 'whatwg-fetch';
-
 declare var fetch: any;
 
 describe('HTTPBatchedNetworkInterface', () => {

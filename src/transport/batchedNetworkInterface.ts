@@ -1,7 +1,5 @@
 import { ExecutionResult } from 'graphql';
 
-import 'whatwg-fetch';
-
 import {
   BaseNetworkInterface,
   HTTPNetworkInterface,
@@ -18,6 +16,10 @@ import { BatchMiddlewareInterface } from './middleware';
 import { QueryBatcher } from './batching';
 
 import { assign } from '../util/assign';
+
+import createFetch from 'fetch-ponyfill';
+
+const fetch = createFetch().fetch;
 
 export interface BatchRequestAndOptions {
   requests: Request[];

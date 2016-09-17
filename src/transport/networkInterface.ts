@@ -1,5 +1,3 @@
-import 'whatwg-fetch';
-
 import { ExecutionResult, DocumentNode } from 'graphql';
 
 import { print } from 'graphql/language/printer';
@@ -11,6 +9,10 @@ import { AfterwareInterface, BatchAfterwareInterface } from './afterware';
 import { removeConnectionDirectiveFromDocument } from '../queries/queryTransform';
 
 import { Observable } from '../util/Observable';
+
+import createFetch from 'fetch-ponyfill';
+
+const fetch = createFetch().fetch;
 
 /**
  * This is an interface that describes an GraphQL document to be sent
